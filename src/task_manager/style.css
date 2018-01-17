@@ -1,0 +1,55 @@
+
+html,body {
+    background-color: #eef1f4;
+
+}
+
+#root {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+    height: 400px;
+    width: 800px;
+}
+
+.panel {
+    height: 80px;
+}
+
+.todos {
+    background-color: white;
+    height: 100%;
+}
+
+.caption {
+    float: left;
+
+    font-size: 20px;
+    color:#444445;
+    padding: 10px;
+}
+
+.button {
+    float: right;
+
+    background-color: #ff5252;
+    width: 95px;
+    height: 20px;
+    padding: 10px 15px 15px 30px;
+
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.todo {
+
+
+
+}
