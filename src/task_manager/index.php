@@ -1,3 +1,15 @@
+<?php
+
+
+include 'dao.php';
+include 'todo.php';
+
+
+$dao = new TodoDao();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,81 +27,25 @@
 
 
     <div class="todos" id="scroll-bar">
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-        <div class="separator-todes"></div>
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-        <div class="separator-todes"></div>
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-        <div class="separator-todes"></div>
 
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-        <div class="separator-todes"></div>
+        <?php
+        $todos = $dao->getListTodo();
 
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-        <div class="separator-todes"></div>
+        foreach ($todos as $todo) {
 
-        <div class="todo">
-            <div class="box-line">
-                <div class="caption-t"> Create new script
-                </div>
-                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            </div>
-            <div class="box-line">
-                <div class="date-t">Due: Aug 1, 2015</div>
-                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
-            </div>
-        </div>
-
+            echo '<div class="todo">';
+            echo '<div class="box-line">';
+            echo '<div class="caption-t">' . $todo->content . '</div>';
+            echo '<div class="btn-t-complete"><i class="fas fa-check"></i></div>';
+            echo '</div>';
+            echo '<div class="box-line">';
+            echo '<div class="date-t">Due:' . $todo->date . '</div>';
+            echo '<div class="btn-t-delete"><i class="fas fa-trash"></i></div>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="separator-todes"></div>';
+        }
+        ?>
     </div>
 
 </div>
