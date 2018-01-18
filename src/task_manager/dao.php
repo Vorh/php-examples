@@ -5,9 +5,11 @@
 class TodoDao {
 
 
+    private $db;
     private $todos = array();
 
-    public function __construct(){
+    public function __construct($db){
+        $this->db = $db;
 
         $todo1 =new Todo();
         $todo1->date = date('Y-m-d H:i:s');
@@ -38,8 +40,15 @@ class TodoDao {
     }
 
 
-    function getListTodo(){
-            return $this->todos;
+    function  getListTodo(){
+
+        $sql = "select * from todo";
+
+        $stmp =$this->db->query($sql);
+
+        $stmp->execute();
+
+        return $stmp;
     }
 
 }
