@@ -14,16 +14,81 @@
     </div>
 
 
-    <div class="todos">
+    <div class="todos" id="scroll-bar">
         <div class="todo">
-            <div class="caption-t"> Create new script
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
             </div>
-            <div class="date-t">Due: Aug 1, 2015</div>
-            <div class="btn-t-complete"><i class="fas fa-check"></i></div>
-            <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
         </div>
-        <div class="todo">Two todo</div>
-        <div class="todo">Three todo</div>
+        <div class="separator-todes"></div>
+        <div class="todo">
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
+        </div>
+        <div class="separator-todes"></div>
+        <div class="todo">
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
+        </div>
+        <div class="separator-todes"></div>
+
+        <div class="todo">
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
+        </div>
+        <div class="separator-todes"></div>
+
+        <div class="todo">
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
+        </div>
+        <div class="separator-todes"></div>
+
+        <div class="todo">
+            <div class="box-line">
+                <div class="caption-t"> Create new script
+                </div>
+                <div class="btn-t-complete"><i class="fas fa-check"></i></div>
+            </div>
+            <div class="box-line">
+                <div class="date-t">Due: Aug 1, 2015</div>
+                <div class="btn-t-delete"><i class="fas fa-trash"></i></div>
+            </div>
+        </div>
 
     </div>
 
