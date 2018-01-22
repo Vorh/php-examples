@@ -3,9 +3,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-include_once 'dataBase.php';
-include_once 'todo.php';
-include_once 'dao.php';
+include_once '../dataBase.php';
+include_once '../todo.php';
+include_once '../dao.php';
 
 
 $dataBase = new DataBase();
@@ -32,7 +32,8 @@ if ($count > 0) {
             "content" => $content,
             "date" => $date,
             "deleted" => $deleted,
-            "complete" => $complete
+            "complete" => $complete,
+            "id" => $id
         );
         array_push($todos["todo"], $product_item);
     }
