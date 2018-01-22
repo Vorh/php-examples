@@ -20,10 +20,10 @@ $list = $dao->getListTodo();
 $count = $list->rowCount();
 
 
-if ($count > 1) {
+if ($count > 0) {
 
     $todos=array();
-    $todos["records"]=array();
+    $todos["todo"]=array();
 
     while ($row = $list->fetch(PDO::FETCH_ASSOC)){
         extract($row);
@@ -34,10 +34,10 @@ if ($count > 1) {
             "deleted" => $deleted,
             "complete" => $complete
         );
-        array_push($todos["records"], $product_item);
+        array_push($todos["todo"], $product_item);
     }
 
-    echo json_encode($products_arr);
+    echo json_encode($todos);
 
 } else {
     echo json_encode(

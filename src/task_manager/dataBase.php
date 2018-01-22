@@ -18,7 +18,7 @@ class DataBase {
         try{
             $this->conn = new PDO(
                 "mysql:host=".$this->host.
-                ";dname=".$this->name,
+                ";dbname=".$this->name,
                 $this->user,
                 $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
