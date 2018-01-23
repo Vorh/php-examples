@@ -33,6 +33,16 @@ class TodoDao {
         $stmt->execute();
     }
 
+    function completeTodo($id){
+        $sql = "update todo set complete = true where id = :id";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->bindParam(":id",$id);
+
+        $stmt->execute();
+    }
+
     function createTodo($todo){
         $sql = "insert into todo (content, date, deleted, complete) VALUES 
                 ()";

@@ -52,16 +52,33 @@ function getListTodo() {
                     box_line.appendChild(btnTdelete);
                     btnTdelete.appendChild(i);
 
-
                     captionT.innerHTML = item.content;
                     dateT.innerHTML = item.date;
 
-
                     var separatorTodes = document.createElement('div');
                     separatorTodes.className = 'separator-todes';
+                    todo.appendChild(separatorTodes);
+
 
                     todoEl.appendChild(todo);
-                    todoEl.appendChild(separatorTodes);
+
+
+                    (function (item,todo) {
+                        btnTdelete.addEventListener('click',function () {
+                            deleteTodo(item.id);
+
+                            var todoEl = document.getElementsByClassName('todos')[0];
+                            todoEl.removeChild(todo);
+
+                        });
+
+
+                        btnTComplete.addEventListener('click',function () {
+                            completeTodo(item.id);
+                            var todoEl = document.getElementsByClassName('todos')[0];
+                            todoEl.removeChild(todo);
+                        })
+                    })(item,todo);
 
                 }
             }
@@ -72,9 +89,16 @@ function getListTodo() {
 }
 
 
-function deleteTodo(id) {
-    xhr.open("GET", api + "delete.php" + '?', true);
 
+function deleteTodo(id) {
+    xhr.open("GET", api + "delete.php" + '?id=' + id, true);
+    xhr.send(null);
+
+}
+
+function completeTodo(id) {
+    xhr.open("GET",api + "complete.php" + '?id=' + id,true);
+    xhr.send(null);
 }
 
 window.onload = getListTodo();
