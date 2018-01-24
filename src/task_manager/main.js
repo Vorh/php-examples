@@ -3,10 +3,9 @@ var xhr = new XMLHttpRequest();
 
 const  api = '/api/';
 
-var todos;
 
-function getListTodo() {
-    xhr.open("GET", api + "read.php", true);
+function getListTodo(id) {
+    xhr.open("GET", api + "read.php?id=" + id, true);
     xhr.onload = function (e) {
         if (xhr.readyState === 4){
             if (xhr.status === 200){
@@ -101,4 +100,3 @@ function completeTodo(id) {
     xhr.send(null);
 }
 
-window.onload = getListTodo();

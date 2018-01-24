@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if (empty($username_err) && empty($password_err)){
 
-        $sql = "select username , password from users where username = :username";
+        $sql = "select id,username , password from users where username = :username";
 
 
         if ($stmt = $pdo->prepare($sql)){
@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             $param_username = validateInput($_POST['username']);
 
 
-
             if ($stmt->execute()){
 
                 if ($stmt->rowCount() ==1){
@@ -57,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                     if($row = $stmt->fetch()){
 
                         $hashed_password = $row['password'];
-
+                        $id = $row['id'];
 
 
                         if (password_verify($password,$hashed_password)){
@@ -65,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                             session_start();
 
                             $_SESSION['username']= $username;
+                            $_SESSION['id']= $id;
                             header('location:index.php');
                         }else{
                             $password_err = 'The password you entered was not valid.';

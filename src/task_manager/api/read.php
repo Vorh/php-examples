@@ -13,8 +13,9 @@ $db = $dataBase->getConnection();
 
 $dao = new TodoDao($db);
 
+$id = $_GET['id'];
 
-$list = $dao->getListTodo();
+$list = $dao->getListTodo($id);
 
 
 $count = $list->rowCount();

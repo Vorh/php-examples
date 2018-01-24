@@ -12,11 +12,13 @@ class TodoDao {
     }
 
 
-    function  getListTodo(){
+    function  getListTodo($id){
 
-        $sql = "select * from todo";
+        $sql = "select * from todo where user_id = :id";
 
-        $stmp =$this->db->query($sql);
+        $stmp =$this->db->prepare($sql);
+
+        $stmp->bindParam(':id',$id);
 
         $stmp->execute();
 
