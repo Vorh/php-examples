@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                             session_start();
 
                             $_SESSION['username']= $username;
-                            header('location:welcome.php');
+                            header('location:index.php');
                         }else{
                             $password_err = 'The password you entered was not valid.';
 

@@ -1,55 +1,44 @@
 <?php
+session_start();
 
 
-include 'todoDao.php.php';
-include 'todo.php';
+include_once 'todoDao.php';
+include_once 'todo.php';
 
 
-//$dao = new TodoDao();
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+    header('location: login.php');
+    exit;
+}
 
-
+echo $_SERVER['username'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Todo</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-    <script  src="main.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
-<div id="root">
-    <div class="panel">
-        <div class="caption">TODOS</div>
-        <div class="button">New Todo</div>
+<div id="container">
+    <div id="sidebar">
+        <div class="item" onclick="location.href='logout.php';"><i class="fas fa-sign-out-alt"></i> Sign out</div>
     </div>
+    <div id="content">
+            <div class="panel">
+                <div class="caption">TODOS</div>
+                <div class="button">New Todo</div>
+            </div>
 
 
-    <div class="todos" id="scroll-bar">
+            <div class="todos" id="scroll-bar">
+            </div>
 
-<!--        --><?php
-////        $todos = $dao->getListTodo();
-//        $todos = null;
-//
-//        foreach ($todos as $todo) {
-//
-//            echo '<div class="todo">';
-//            echo '<div class="box-line">';
-//            echo '<div class="caption-t">' . $todo->content . '</div>';
-//            echo '<div class="btn-t-complete"><i class="fas fa-check"></i></div>';
-//            echo '</div>';
-//            echo '<div class="box-line">';
-//            echo '<div class="date-t">Due:' . $todo->date . '</div>';
-//            echo '<div class="btn-t-delete"><i class="fas fa-trash"></i></div>';
-//            echo '</div>';
-//            echo '</div>';
-//            echo '<div class="separator-todes"></div>';
-//        }
-//        ?>
     </div>
-
 </div>
 </body>
 </html>
