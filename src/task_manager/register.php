@@ -3,6 +3,7 @@
 
 include_once 'dataBase.php';
 include_once 'userDao.php';
+include_once 'utils.php';
 
 
 $username = $password = $confirm_password = '';
@@ -80,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             $param_password = password_hash($password,PASSWORD_DEFAULT);
 
 
-            if($stmt->execute()){
 
+            if($stmt->execute()){
                 header("location:login.php");
             }else{
                 echo "Something went wrong. Please try again later.";
@@ -95,12 +96,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 }
 
 
-function validateInput($data){
-    $data = trim($data);
-    $data = stripcslashes($data);
-    $data = htmlentities($data);
-    return $data;
-}
+
 
 
 ?>
