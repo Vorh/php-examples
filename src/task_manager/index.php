@@ -12,7 +12,6 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 }
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -21,14 +20,11 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     <meta charset="UTF-8">
     <title>Todo</title>
     <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/datepicker.css">
     <script src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-     <script src="https://unpkg.com/js-datepicker"></script>
     <script src="static/main.js"></script>
     <script>
         window.onload = getListTodo(<?php echo $_SESSION['id'];?>);
 
-        const picker = datepicker('#test');
     </script>
 </head>
 <body>
@@ -47,25 +43,23 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
         <?php
 
 
-        if (isset($_GET['create'])){
-            echo '<div class="create_todo">
-<span>CREATE NEW TODO</span>
+        if (isset($_GET['create'])) {
+            echo '<div class="create-todo">
+<span>CREATE NEW TODO</span><br>
 <form id="create-new-todo">
 
-<label>Name</label>
-<input type="text" name="name">
-<label>Notes</label>
-<textarea name="notes" form="create-new-todo"></textarea>
-<label>Due Date</label>
-<input id="test">
+<label>Name</label><br>
+<input type="text" name="name"><br>
+<label>Notes</label><br>
+<textarea name="notes" form="create-new-todo"></textarea><br>
+<input type="submit" class="btn-create-todo" value="Create todo">
 </form>
 </div>';
-        }else {
-           echo '<div class="todos" id="scroll-bar"> </div>';
+        } else {
+            echo '<div class="todos" id="scroll-bar"> </div>';
         }
 
         ?>
-
 
 
     </div>
