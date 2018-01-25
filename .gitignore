@@ -3,3 +3,6 @@
 
 .idea/
 sity-new-version.iml
+
+*.css*
+

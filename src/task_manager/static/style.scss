@@ -16,15 +16,60 @@ html,body {
 
 #content {
     float: right;
-    width: 75%;
+    width: 80%;
     height: 100%;
 
  }
 
+
+
+.logo{
+    background-color: #3ea06f;
+    height:60px;
+    width: 100%;
+
+
+    .inner-box {
+        cursor: pointer;
+        color: #1c1e29;
+        font-size: 35px;
+
+        padding: 5px 0 0 25px;
+
+        span {
+            margin-left: 10px;
+        }
+
+
+    }
+
+
+}
+
+.combox {
+    width: 150px;
+    height: 35px;
+    margin: 10px 10px 0 20px;
+    background-color: #ff5252;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+
+
+
+
+.combox p {
+    color: #eef1f4;
+    font-weight: 800;
+    padding: 5px 0 0 40px;
+}
+
+
 #sidebar {
     float: left;
     background-color: #2f3b4c;
-    width: 20%;
+    width: 18%;
     height: 100%;
 }
 
@@ -47,6 +92,7 @@ html,body {
 }
 
 .todos {
+    margin: 20px 20px 0 0;
     background-color: white;
     height: 80%;
     overflow-y: auto;
