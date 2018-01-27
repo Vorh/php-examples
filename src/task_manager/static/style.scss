@@ -1,4 +1,8 @@
 
+@import 'create_todo';
+@import 'todos';
+
+
 html,body {
     background-color: #eef1f4;
     height:100%;
@@ -16,8 +20,8 @@ html,body {
 
 #content {
     float: right;
-    width: 80%;
     height: 100%;
+    width: 78%;
 
  }
 
@@ -53,22 +57,22 @@ html,body {
     border-radius: 2px;
     cursor: pointer;
 
+
+    p {
+        color: #eef1f4;
+        font-weight: 800;
+        padding: 5px 0 0 40px;
+    }
 }
 
 
 
-
-.combox p {
-    color: #eef1f4;
-    font-weight: 800;
-    padding: 5px 0 0 40px;
-}
 
 
 #sidebar {
     float: left;
     background-color: #2f3b4c;
-    width: 18%;
+    width: 200px;
     height: 100%;
 }
 
@@ -81,42 +85,7 @@ html,body {
 
 }
 
-.create-todo{
 
-    color: #444445;
-    width: 100%;
-
-    span {
-        font-size: 25px;
-        line-height: 35px;
-        font-weight: 600;
-        margin: 20px 0 20px 0;
-
-    }
-
-    input[type=text] {
-        outline: none;
-        border: 3px solid #e9e9e9;
-
-        :focus{
-            border-color: #ff5252;
-        }
-    }
-
-}
-
-.btn-create-todo{
-
-    background-color: #ff5252;
-    font-size: 15px;
-    width: 120px;
-    height: 35px;
-    border: none;
-    color: white;
-    font-weight: 800;
-
-
-}
 
 .item:hover {
     color: #fff;
@@ -135,13 +104,13 @@ html,body {
     overflow-x: hidden;
 }
 
-.caption {
-    float: left;
-
-    font-size: 20px;
-    color:#444445;
-    padding: 10px;
-}
+//.caption {
+//    float: left;
+//
+//    font-size: 20px;
+//    color:#444445;
+//    padding: 10px;
+//}
 
 .button {
     float: right;
@@ -157,66 +126,3 @@ html,body {
     cursor: pointer;
 }
 
-.todo {
-    padding: 20px 20px 5px 20px;
-}
-
-.box-line {
-    height: 35px;
-}
-
-
-.caption-t {
-    font-size: 20px;
-    color:#2a2a2a;
-    font-weight: 500;
-    float: left;
-}
-
-.btn-t-complete {
-    float: right;
-    cursor: pointer;
-    color: #5aff75;
-}
-
-.btn-t-delete {
-    float: right;
-    cursor: pointer;
-    color: #ff5252;
-}
-
-.date-t {
-    float: left;
-    color: #444445;
-    opacity: 0.6;
-}
-
-
-.separator-todes {
-    background-color: #2a2a2a;
-    height: 1px;
-    opacity: 0.2;
-
-}
-
-
-
-#scroll-bar::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
-}
-
-#scroll-bar::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-
-#scroll-bar::-webkit-scrollbar-thumb
-{
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #efeaea;
-}

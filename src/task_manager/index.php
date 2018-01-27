@@ -42,21 +42,20 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 
         <?php
 
-
         if (isset($_GET['create'])) {
             echo '<div class="create-todo">
-<span>CREATE NEW TODO</span><br>
-<form id="create-new-todo">
+                <h1 class="caption">CREATE NEW TODO</h1><br>
+                <form id="create-new-todo">
+                    <label>Name</label><br>
+                    <input class="name border-red" type="text" name="name"><br>
+                    <label>Notes</label><br>
+                    <textarea class="notes border-red" name="notes" form="create-new-todo"></textarea><br>
+                    <input type="submit" class="btn-create-todo" value="Create todo">
+                </form>
+            </div>';
 
-<label>Name</label><br>
-<input type="text" name="name"><br>
-<label>Notes</label><br>
-<textarea name="notes" form="create-new-todo"></textarea><br>
-<input type="submit" class="btn-create-todo" value="Create todo">
-</form>
-</div>';
         } else {
-            echo '<div class="todos" id="scroll-bar"> </div>';
+            echo '< div class="todos" id = "scroll-bar" > </div > ';
         }
 
         ?>
