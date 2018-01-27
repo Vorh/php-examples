@@ -3,9 +3,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-include_once '../dataBase.php';
-include_once '../todo.php';
-include_once '../todoDao.php';
+include_once '../dao/dataBase.php';
+include_once '../model/todo.php';
+include_once '../dao/todoDao.php';
 
 
 $dataBase = new DataBase();

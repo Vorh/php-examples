@@ -7,6 +7,8 @@ class Todo {
    public $content;
    public $deleted;
    public $complete;
+   public $userId;
+   public $caption;
 
 
 }

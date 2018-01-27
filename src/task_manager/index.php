@@ -2,8 +2,8 @@
 session_start();
 
 
-include_once 'todoDao.php';
-include_once 'todo.php';
+include_once 'dao/todoDao.php';
+include_once 'model/todo.php';
 
 
 if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
@@ -29,31 +29,12 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 </head>
 <body>
 <div id="container">
-    <div id="sidebar">
-        <div class="logo">
-            <diV class="inner-box"><i class="fas fa-database"></i><span>TD</span>
-            </diV>
-        </div>
-        <div class="combox" onclick="location.href='index.php?create';"><p>New todo</p></div>
-        <div class="item" onclick="location.href='logout.php';"><i class="fas fa-sign-out-alt"></i> Sign out</div>
-    </div>
+    <?php include 'sidebar.php'?>
     <div id="content">
-
-
         <?php
 
         if (isset($_GET['create'])) {
-            echo '<div class="create-todo">
-                <h1 class="caption">CREATE NEW TODO</h1><br>
-                <form id="create-new-todo">
-                    <label>Name</label><br>
-                    <input class="name border-red" type="text" name="name"><br>
-                    <label>Notes</label><br>
-                    <textarea class="notes border-red" name="notes" form="create-new-todo"></textarea><br>
-                    <input type="submit" class="btn-create-todo" value="Create todo">
-                </form>
-            </div>';
-
+            include 'createTodo.php';
         } else {
             echo '< div class="todos" id = "scroll-bar" > </div > ';
         }
