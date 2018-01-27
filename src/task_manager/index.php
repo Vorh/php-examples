@@ -11,7 +11,6 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     exit;
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +18,10 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <title>Todo</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <script src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
-    <script src="static/main.js"></script>
-    <script>
-        window.onload = getListTodo(<?php echo $_SESSION['id'];?>);
+    <script src="static/js/main.js"></script>
 
-    </script>
 </head>
 <body>
 <div id="container">
@@ -36,12 +32,10 @@ if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
         if (isset($_GET['create'])) {
             include 'createTodo.php';
         } else {
-            echo '< div class="todos" id = "scroll-bar" > </div > ';
+            include 'listTodo.php';
         }
 
         ?>
-
-
     </div>
 </div>
 </body>

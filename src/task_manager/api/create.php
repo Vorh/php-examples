@@ -1,15 +1,18 @@
 
 <?php
 
+session_start();
+
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=UTF-8');
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-include_once '../dataBase.php';
-include_once '../todoDao.php';
-include_once '../todo.php';
+include_once '../dao/dataBase.php';
+include_once '../dao/todoDao.php';
+include_once '../model/todo.php';
+include_once '../utils.php';
 
 
 
@@ -18,10 +21,9 @@ $db = $dataBase->getConnection();
 
 $dao = new TodoDao($db);
 
-$data = json_decode(file_get_contents("php://input"));;
 $todo = new Todo();
-$todo->content = $data->content;
-$todo->date = $data->data;
+$todo->content = validateInput($_POST['content']);
+$todo->caption= validateInput($_POST['caption']);
+$todo->userId = $_SESSION['id'];
 
-
-$dao->createTodo($_POST['todo']);
+$dao->createTodo($todo);

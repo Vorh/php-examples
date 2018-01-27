@@ -89,6 +89,11 @@ function getListTodo(id) {
 
 
 
+
+function createTodo() {
+
+}
+
 function deleteTodo(id) {
     xhr.open("GET", api + "delete.php" + '?id=' + id, true);
     xhr.send(null);
